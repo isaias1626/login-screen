@@ -76,7 +76,7 @@ const CardOrder = () => {
             </div>
 
             <Separator />
-            <div className="pt-6">
+            <div className="pt-6 pb-8">
                 <Pagination className="text-orange-500">
                     <PaginationContent>
                         <PaginationItem>
