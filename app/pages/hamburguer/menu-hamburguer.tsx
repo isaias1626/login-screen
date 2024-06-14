@@ -1,10 +1,10 @@
 "use client";
 
-import { ChevronLeft, MenuIcon, Home, Box, Grid, List, School, Clipboard, User } from "lucide-react";
+import { ChevronLeft, MenuIcon, Home, Box, Grid, School, Clipboard, User } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { useState } from "react";
-import HomeIcon from "@/public/home.svg"
+import LogoMenu from "@/public/logoMenu.png"
 
 const MenuHamburguer = () => {
     const [isOpen, setIsOpen] = useState(false);
@@ -24,7 +24,10 @@ const MenuHamburguer = () => {
             {isOpen && (
                 <div>
                     <div onClick={toggleMenu}  className="absolute inset-0 z-10 bg-black bg-opacity-50"></div>
-                        <div className="absolute top-0 z-10 w-[248px] py-2 left-0 bg-white shadow-lg h-screen px-6">
+                    <div className="absolute top-0 z-10 w-[248px] py-2 left-0 bg-white shadow-lg h-screen px-6">
+                        <div className="mb-6 mt-6">
+                            <Image className="w-[70px]" src={LogoMenu} alt="logo do menu hamburguer" />
+                        </div>
                             <Link href="/" className="mb-2 text-md font-semibold hover:text-orange-500 flex px-4 py-2 text-gray-800 hover:bg-gray-200 rounded-full"><Home className="w-5 mr-4" /> Home</Link>
                             <Link href="#" className="mb-2 text-md font-semibold hover:text-orange-500 flex px-4 py-2 text-gray-800 hover:bg-gray-200 rounded-full"><Box className="w-5 mr-4" /> Estoque</Link>
                             <Link href="#" className="mb-2 text-md font-semibold hover:text-orange-500 flex px-4 py-2 text-gray-800 hover:bg-gray-200 rounded-full"><Grid className="w-5 mr-4" /> Categorias</Link>

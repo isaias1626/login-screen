@@ -19,7 +19,7 @@ const HeaderPage = () => {
                                 <MenuHamburguer />
                         </div>
                         <div className="mt-1">
-                            <Link href={"/"} className="text-[21px] font-400 text-white ml-4">Home</Link>
+                            <Link href={"/"} className="lg:hidden text-[21px] font-400 text-white ml-4">Home</Link>
                         </div>
                     </div>
                 </div>
