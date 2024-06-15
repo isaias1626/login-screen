@@ -24,13 +24,13 @@ const MyAccountPage = () => {
                         </div>
                             <div className="lg:hidden">
                                 <CardOrder />
-                        </div>
-                        <div>
-                            <TableDesktop />
+                            </div>
+                            <div className="hidden lg:flex">
+                                <TableDesktop />
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
             </section>
         </ModalProvider>
     );

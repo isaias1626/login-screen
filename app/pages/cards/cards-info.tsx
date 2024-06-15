@@ -11,7 +11,7 @@ const Cards = () => {
         <div>
             <div className="lg:flex lg:gap-3">
                 <div className="mb-4 w-full">
-                    <Link href={"/"}>
+                    <Link href={'#'}>
                         <div className="bg-white h-[136px] rounded-[20px] py-[36px] px-[28px] hover:shadow-md">
                             <div>
                                 <Image src={IconPed} alt="Pedidos" />
@@ -23,7 +23,7 @@ const Cards = () => {
                     </Link>
                 </div>
                 <div className="mb-4 w-full">
-                    <Link href={"/"}>
+                    <Link href={"#"}>
                         <div className="bg-white h-[136px] rounded-[20px] py-[36px] px-[28px] hover:shadow-md">
                             <div>
                                 <Image src={IconEst} alt="Estoque" />
@@ -35,7 +35,7 @@ const Cards = () => {
                     </Link>
                 </div>
                 <div className="mb-4 w-full">
-                    <Link href={"/"}>
+                    <Link href={"#"}>
                         <div className="bg-white h-[136px] rounded-[20px] py-[36px] px-[28px] hover:shadow-md">
                             <div>
                                 <Image src={IconList} alt="Listas escolares" />

@@ -19,7 +19,7 @@ const LinksSidebar = () => {
     };
 
     return ( 
-        <div>
+        <div className="overflow-x-hidden">
             <div className="mb-6 mt-6">
                     <Image className="w-[70px] lg:w-[50px] lg:ml-2" src={LogoMenu} alt="logo do menu hamburguer" />
             </div>

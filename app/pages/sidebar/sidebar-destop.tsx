@@ -20,7 +20,7 @@ const Sidebar = () => {
 
     return (
         <div>
-            <nav className="bg-white top-0 h-full overflow-y-auto" style={{ width }}>
+            <nav className="bg-white top-0 h-full overflow-y" style={{ width }}>
                 <div>
                     <div>
                         <div>
@@ -35,7 +35,7 @@ const Sidebar = () => {
                                 <ChevronLeft 
                                     className={`mr-5 w-8 transition-transform duration-300 ${isCollapsed ? 'rotate-180' : ''}`} 
                                 />
-                                Recolher
+                                <span className={`hidden ${isCollapsed ? ' ' : 'lg:flex'}`}>Recolher</span>
                             </button>
                         </div>
                     </div>
