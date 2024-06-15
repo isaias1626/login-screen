@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { ChevronLeft, Home, Box, Grid, School, Clipboard, User } from "lucide-react";
+import {  Home, Box, Grid, School, Clipboard, User } from "lucide-react";
 import LogoMenu from "@/public/logoMenu.png"
 import { useState } from "react";
 

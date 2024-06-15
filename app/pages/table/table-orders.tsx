@@ -1,9 +1,10 @@
-// components/TabelaPedidos.tsx
+"use client";
 
 import React from 'react';
 import { Pagination, PaginationContent, PaginationEllipsis, PaginationItem, PaginationLink, PaginationNext, PaginationPrevious } from '@/app/_components/ui/pagination';
 import { Filter, Trash2 } from 'lucide-react';
 import { Command, CommandInput, CommandList } from '@/app/_components/ui/command';
+import { useModal } from '@/app/pages/context/modal-context';
 
 interface Pedido {
     numPedido: string;
@@ -14,10 +15,12 @@ interface Pedido {
     }
 
     interface Props {
-    pedidos: Pedido[];
+        pedidos: Pedido[];
     }
 
-    const TabelaPedidos: React.FC<Props> = ({ pedidos }) => {
+const TabelaPedidos: React.FC<Props> = ({ pedidos }) => {
+    const { openModal } = useModal();
+
         return (
             <div>
                 <div className='flex items-center'>
@@ -28,8 +31,8 @@ interface Pedido {
                             </CommandList>
                         </Command>
                     </div>
-                    <div className=''>
-                        <button className='bg-orange-500 flex text-white px-8 py-[12px] rounded-xl ml-6'><Filter className='w-4 mr-2 text-white' /> Filtrar</button>
+                        <div>
+                        <button onClick={openModal} className='bg-orange-500 flex text-white px-8 py-[12px] rounded-xl ml-6'><Filter className='w-4 mr-2 text-white' /> Filtrar</button>
                     </div>
                 </div>
             <div className="bg-white shadow-sm rounded-md overflow-hidden">
@@ -90,8 +93,8 @@ interface Pedido {
                 <PaginationNext href="#" className='text-orange-500' />
                 </PaginationItem>
             </PaginationContent>
-            </Pagination>
-        </div>
+                    </Pagination>
+            </div>
         </div>
     );
 };

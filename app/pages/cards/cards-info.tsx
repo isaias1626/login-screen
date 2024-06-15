@@ -104,7 +104,7 @@ const Cards = () => {
             </div>
             </div>
 
-            <div>
+            <div className="lg:hidden">
                 <LatestOrders/>
             </div>
         </div>

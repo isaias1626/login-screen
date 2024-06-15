@@ -10,7 +10,6 @@ const LatestOrders = () => {
             <div>
                 <div>
                     <h2 className="text-semibold text-[28px] mb-4 lg:hidden">Últimos pedidos</h2>
-                    <h2 className="lg:flex text-semibold text-[28px] mb-4 hidden">Lista de pedidos</h2>
                 </div>
                 <div>
                     <div className="flex items-center justify-between pb-8">
