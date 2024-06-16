@@ -1,10 +1,15 @@
+"use client";
+
 import { Avatar, AvatarImage } from "@/app/_components/ui/avatar";
 import { Command, CommandInput, CommandList } from "@/app/_components/ui/command";
-import React from "react";
+import React, { useState } from "react";
 import Link from "next/link";
 import MenuHamburguer from "../hamburguer/menu-hamburguer";
 
-const HeaderPage = () => {
+
+
+const HeaderPage =  ( ) => {
+
     return (
         <div>
             <nav className="h-[136px] bg-blue-900 p-4 pt-3 lg:flex lg:h-[68px] lg:py-4">
@@ -39,7 +44,8 @@ const HeaderPage = () => {
                         </Avatar>
                     </div>
                     <div className="hidden lg:flex">
-                        <h3 className="text-md mt-2 ml-4 font-semibold text-white items-center justify-center">IsaiasRocha</h3>
+                        <h3 className="text-md mt-2 ml-4 font-semibold text-white items-center justify-center">
+                        </h3>
                     </div>
             </nav>
         </div>

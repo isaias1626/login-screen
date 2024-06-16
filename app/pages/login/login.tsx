@@ -8,7 +8,7 @@ import { Label } from "@/app/_components/ui/label";
 import { Input } from "@/app/_components/ui/input";
 import { useRouter } from "next/navigation";
 import { fetchUser, validatePassword } from "@/app/services/data";
-import PasswordResetModal from "@/app/pages/login/password-recovery/page";
+import PasswordResetModal from "@/app/pages/login/password-recovery/password-recovery";
 
 const Login = () => {
     const router = useRouter();

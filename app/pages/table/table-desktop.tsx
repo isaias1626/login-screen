@@ -4,7 +4,6 @@ import TableOrdersDesktop from "@/app/pages/table/table-orders"
 import { ModalProvider } from '../context/modal-context';
 
 const TableDesktop: React.FC = () => {
-    
 
     return (
         <ModalProvider>
@@ -12,7 +11,7 @@ const TableDesktop: React.FC = () => {
                 <div>
                     <ModalFilter />
                 </div>
-                <div className='' id='lista-pedidos'>
+                <div>
                     <h2 className='text-lg font-semibold'>Lista de Pedidos</h2>
                     <TableOrdersDesktop />
                 </div>

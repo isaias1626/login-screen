@@ -27,8 +27,8 @@ const ModalFilter = () => {
         <div>
             {!isClose && (
                 <div>
-                    <div className="fixed inset-0 flex items-center justify-center">
-                        <div className="bg-white rounded-xl shadow-lg w-[390px] h-auto p-4">
+                    <div className="fixed inset-0 flex items-center justify-center z-10">
+                        <div className="bg-white rounded-xl shadow-lg lg:w-[390px] lg:h-auto p-4 w-[300px]">
                             <div className="flex justify-between">
                                 <h2 className="text-md font-semibold">Filtro</h2>
                                 <button onClick={closeModal}><X /></button>
@@ -86,14 +86,14 @@ const ModalFilter = () => {
                                                 Personalizado
                                             </label>
                                         </div>
-                                        <div className="flex my-4">
-                                            <div className="flex items-center">
+                                        <div className="lg:flex lg:my-4 py-4 lg:py-0">
+                                            <div className="lg:flex lg:items-center">
                                                 <label htmlFor="apartir">de</label>
                                                 <input className="bg-slate-100 border-[1px] border-slate-300 rounded-lg p-1 ml-2" type="date" name="data" id="apartir" />
                                             </div>
-                                            <div className="flex items-center ml-2">
+                                            <div className="py-4 lg:py-0 lg:flex lg:items-center lg:ml-2">
                                                 <label htmlFor="ate">a</label>
-                                                <input className="bg-slate-100 border-[1px] border-slate-300 rounded-lg p-1 ml-2" type="date" name="data" id="ate" />
+                                                <input className="bg-slate-100 border-[1px] border-slate-300 rounded-lg p-1 ml-[18px]  lg:ml-2" type="date" name="data" id="ate" />
                                             </div>
                                         </div>
                                         <Separator className="my-8" />

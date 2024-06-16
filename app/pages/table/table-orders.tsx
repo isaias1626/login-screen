@@ -7,6 +7,7 @@ import { Command, CommandInput, CommandList } from '@/app/_components/ui/command
 import { useModal } from '@/app/pages/context/modal-context';
 import { Pedido, StatusPedido } from "@/app/services/data"
 import ModalDelete from './modal-delete';
+import { Calendar } from 'lucide-react';
 
 const TableOrdersDesktop: React.FC = () => {
     const { openModalDelete, closeModalDelete } = useModal();
@@ -65,11 +66,44 @@ const TableOrdersDesktop: React.FC = () => {
                         </CommandList>
                     </Command>
                 </div>
-                <div>
+                <div className="hidden lg:flex">
                     <button onClick={openModal} className='bg-orange-500 flex text-white px-8 py-[12px] rounded-xl ml-6'><Filter className='w-4 mr-2 text-white' /> Filtrar</button>
                 </div>
+                <div className='ml-4'>
+                    <button onClick={openModal} className="lg:hidden bg-orange-500 p-2 rounded-xl">
+                        <Calendar className="items-center text-white"/>
+                    </button>
+                </div>
             </div>
-            <div className="bg-white shadow-sm rounded-md overflow-hidden">
+            {/* table mobile */}
+            {pedidos.map((pedido, index) => (
+            <div key={index} onClick={() => { setPedidoToDelete(pedido); openModalDelete(); }}  className="bg-white p-6 mb-4 shadow-sm rounded-[20px] cursor-pointer lg:hidden">
+                <div className="block">
+                    <div className="flex gap-3 justify-between">
+                        <div>
+                            <p className="text-sm font-semibold mb-4">Núm. Pedido</p>
+                                <span className="text-md text-blue-400 font-semibold">{ pedido.numPedido }</span>
+                        </div>
+                        <div>
+                            <p className="text-sm font-semibold mb-4">Valor</p>
+                            <span className="text-md font-semibold">{ pedido.valor }</span>
+                        </div>
+                        <div>
+                            <p className="text-sm font-semibold mb-4">Data</p>
+                            <span className="text-md font-semibold">{ pedido.data }</span>
+                        </div>
+                    </div>
+                </div>
+                    <div className="pt-8">
+                        <div className="w-full">
+                            <div className={`w-full text-center items-center rounded-full p-1 text-sm font-bold ${getStatusColor(pedido.status)}`}>{ pedido.status }</div>
+                        </div>
+                    </div>
+            </div>
+            ))}
+
+            {/* table desktop */}
+            <div className="hidden lg:flex bg-white shadow-sm rounded-md overflow-hidden">
                 <table className="min-w-full divide-y divide-gray-200">
                     <thead className="bg-gray-200">
                         <tr className='border-b'>
@@ -88,7 +122,7 @@ const TableOrdersDesktop: React.FC = () => {
                             <th scope="col" className="px-6 py-3 text-left text-sm font-semibold text-black tracking-wider">
                                 Status
                             </th>
-                            <th scope="col" className="px-6 py-3 text-left text-sm font-semibold text-black tracking-wider">
+                            <th scope="col" className=" -6 py-3 text-left text-sm font-semibold text-black tracking-wider">
                                 Ação
                             </th>
                         </tr>
@@ -130,7 +164,7 @@ const TableOrdersDesktop: React.FC = () => {
                 </Pagination>
             </div>
             {pedidoToDelete && (
-                <ModalDelete onDelete={handleDelete} closeModalDelete={closeModalDelete} />
+                <ModalDelete onDelete={handleDelete} />
             )}
         </div>
     );

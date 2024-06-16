@@ -3,6 +3,7 @@ import Logo from "@/public/Image/trajetonBgTransparent.png";
 
 const SendEmailResetPassword = () => {
     return ( 
+    <div>
         <header>
             <div>
                 <div className="flex items-center text-center justify-center pt-2 pb-2 bg-slate-400 mb-8">
@@ -20,6 +21,7 @@ const SendEmailResetPassword = () => {
                 </div>
             </div>
         </header>
+    </div>
     );
 }
 

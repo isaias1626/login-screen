@@ -1,11 +1,11 @@
 import { ModalProvider } from "./pages/context/modal-context";
-import Login from "./pages/login/page";
+import Login from "./pages/login/login";
 
 const Home = () => {
   return ( 
-    <ModalProvider>
-      <Login />
-    </ModalProvider>
+      <ModalProvider>
+        <Login />
+      </ModalProvider>
   );
 }
 

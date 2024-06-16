@@ -4,7 +4,6 @@ import IconEst from "@/public/IconEst.svg";
 import IconList from "@/public/IconList.svg";
 import Person from "@/public/avatar.png";
 import Link from "next/link";
-import LatestOrders from "../latest-orders/latest-orders";
 
 const Cards = () => {
     return ( 
@@ -102,10 +101,6 @@ const Cards = () => {
                     </Link>
                 </div>
             </div>
-            </div>
-
-            <div className="lg:hidden">
-                <LatestOrders/>
             </div>
         </div>
     );

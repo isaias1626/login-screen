@@ -44,7 +44,7 @@ const PasswordResetModal: React.FC<PasswordResetModalProps> = ({ isOpen, onClose
     if (!isOpen) return null;
 
     return (
-        <>
+        <div>
             <div className="bg-white fixed inset-0 flex items-center justify-center lg:bg-black lg:bg-opacity-50">
                 <div className="bg-white p-6 rounded-md z-10">
                     <div className="flex lg:justify-between">
@@ -88,7 +88,7 @@ const PasswordResetModal: React.FC<PasswordResetModalProps> = ({ isOpen, onClose
                     </div>
                 </div>
             )}
-        </>
+        </div>
     );
 };
 

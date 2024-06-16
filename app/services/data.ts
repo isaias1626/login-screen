@@ -6,7 +6,9 @@ export interface User {
         token: string;
         expiresAt: number; 
     };
+    name?: string;
 }
+
 
 export type StatusPedido = 'Em entrega' | 'Entregue' | 'Em preparação';
 export interface Pedido {
@@ -18,9 +20,9 @@ export interface Pedido {
 }
 
 const initialUsers: User[] = [
-    { id: 1, email: "admin@gmail.com", password: "Admin123$" },
-    { id: 2, email: "test@gmail.com", password: "Test123$" },
-    { id: 3, email: "isaiasrocha@gmail.com", password: "Test123$" },
+    { id: 1, email: "admin@gmail.com", password: "Admin123$", name: "admin" },
+    { id: 2, email: "test@gmail.com", password: "Test1234$", name: "test" },
+    { id: 3, email: "isaiasrocha@gmail.com", password: "Test123$", name: "isaiasRocha" },
 ];
 
 
