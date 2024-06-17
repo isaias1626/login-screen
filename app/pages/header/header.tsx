@@ -2,13 +2,12 @@
 
 import { Avatar, AvatarImage } from "@/app/_components/ui/avatar";
 import { Command, CommandInput, CommandList } from "@/app/_components/ui/command";
-import React, { useState } from "react";
+import React from "react";
 import Link from "next/link";
 import MenuHamburguer from "../hamburguer/menu-hamburguer";
 
 
-
-const HeaderPage =  ( ) => {
+const HeaderPage = () => {
 
     return (
         <div>

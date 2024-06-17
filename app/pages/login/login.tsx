@@ -9,8 +9,11 @@ import { Input } from "@/app/_components/ui/input";
 import { useRouter } from "next/navigation";
 import { fetchUser, validatePassword } from "@/app/services/data";
 import PasswordResetModal from "@/app/pages/login/password-recovery/password-recovery";
+import { signIn } from "next-auth/react"
 
 const Login = () => {
+
+
     const router = useRouter();
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
