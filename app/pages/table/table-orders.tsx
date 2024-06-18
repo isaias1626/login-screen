@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Pagination, PaginationContent, PaginationEllipsis, PaginationItem, PaginationLink, PaginationNext, PaginationPrevious } from '@/app/_components/ui/pagination';
 import { Filter, Trash2 } from 'lucide-react';
 import { Command, CommandInput, CommandList } from '@/app/_components/ui/command';
@@ -119,7 +119,7 @@ const TableOrdersDesktop: React.FC = () => {
     const getIconDelete = (pedido: Pedido): React.ReactNode => {
         switch (pedido.status) {
             case "Entregue":
-                return <button className='hover:rotate-6' onClick={() => { setPedidoToDelete(pedido); openModalDelete(); }}><Trash2 /></button>;
+                return <button className='hover:rotate-6' onClick={() => {setPedidoToDelete(pedido); openModalDelete(); }}><Trash2 /></button>;
             case "Em entrega":
             case "Em preparação":
                 return <p>-</p>;
@@ -130,7 +130,9 @@ const TableOrdersDesktop: React.FC = () => {
 
     const handleDelete = () => {
         if (pedidoToDelete) {
-            setPedidos(pedidos.filter(pedido => pedido.numPedido !== pedidoToDelete.numPedido));
+            const pedidosAtualizados = pedidos.filter(pedido => pedido.numPedido !== pedidoToDelete.numPedido);
+            setPedidos(pedidosAtualizados);
+            setDadosFiltrados(pedidosAtualizados);
             setPedidoToDelete(null);
             closeModalDelete();
         }
@@ -169,7 +171,7 @@ const TableOrdersDesktop: React.FC = () => {
                 </div>
                 {/* table mobile */}
                 {dadosFiltrados.map((pedido, index) => (
-                    <div key={index} onClick={() => { setPedidoToDelete(pedido); openModalDelete(); }} className="bg-white p-6 mb-4 shadow-sm rounded-[20px] cursor-pointer lg:hidden">
+                    <div key={index} onClick={() => {if (pedido.status === "Entregue") {setPedidoToDelete(pedido); openModalDelete()}}} className="bg-white p-6 mb-4 shadow-sm rounded-[20px] cursor-pointer lg:hidden">
                         <div className="block">
                             <div className="flex gap-3 justify-between">
                                 <div>
